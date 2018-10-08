@@ -107,6 +107,8 @@ venv.bak/
 #####################
 /data/train.csv
 /data/test.csv
+/data/store.csv
+/data/sample_submission.csv
 try*.ipynb
 0
 1
