@@ -8,12 +8,14 @@ https://www.databriefing.com/
 ```
 
 
-- [jupyter notebook basics](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html)
+#### Prerequisites
+- [Machine Learning Knowledge](https://en.wikipedia.org/wiki/Machine_learning)
+- [Basic Python Skills](https://www.python.org/)
+- [Basic Jupyter Notebook Skills](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/Notebook%20Basics.html)
+
 ```bash
 # jupyter notebook basics
 Run : Shift + Return
 Command Mode : Esc
 ```
-
-
 
