@@ -1,47 +1,12 @@
+
 ### This sample code is based on DataBriefing
 
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 # %matplotlib inline
-import IfxPy
 
-
-########################################
-# data = pd.read_csv('./train.csv')
-table_name = "test1"
-UserInform = 5000
-ConStr = "SERVER=ids0;DATABASE=db1;HOST=127.0.0.1;SERVICE=9088;UID=informix;PWD=xxxxx;"
-
-try:
-    # netstat -a | findstr  9088
-    conn = IfxPy.connect( ConStr, "", "")
-    IfxPy.autocommit(conn, IfxPy.SQL_AUTOCOMMIT_ON)
-except Exception as e:
-    print ('ERROR: Connect failed')
-    print ( e )
-    quit()
-
-sql = "SELECT * FROM {}".format(table_name)
-print( sql )
-
-stmt = IfxPy.exec_immediate(conn, sql)
-tu = IfxPy.fetch_tuple(stmt)
-ls = []
-rc = 0
-while tu != False:
-    rc = rc + 1
-    ls.append( tu )
-    if (rc % UserInform) == 0 :
-        print( "Selected ", rc )
-    tu = IfxPy.fetch_tuple(stmt)
-
-data = pd.DataFrame( ls, columns=[ "Store","DayOfWeek","Date","Sales","Customers","Open","Promo","StateHoliday","SchoolHoliday" ] )
-
-print(f'Rows Selected is {rc} .')
-IfxPy.close(conn)
-##################################################
-
+data = pd.read_csv('./data/train.csv')
 
 # Get the first 5 rows
 tmp1 = data.head()

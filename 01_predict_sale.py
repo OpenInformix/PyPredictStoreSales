@@ -1,4 +1,3 @@
-
 ### This sample code is based on DataBriefing
 
 import numpy as np
