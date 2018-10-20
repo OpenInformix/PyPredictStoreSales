@@ -39,6 +39,9 @@ while tu != False:
 data = pd.DataFrame( ls, columns=[ "Store","DayOfWeek","Date","Sales","Customers","Open","Promo","StateHoliday","SchoolHoliday" ] )
 
 print(f'Rows Selected is {rc} .')
+
+IfxPy.free_result(stmt)
+IfxPy.free_stmt (stmt)
 IfxPy.close(conn)
 ##################################################
 
