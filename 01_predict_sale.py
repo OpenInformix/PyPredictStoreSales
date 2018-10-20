@@ -17,12 +17,12 @@ print("\n------ Head ---------\n", tmp1 )
 tmp1 = data.describe()
 print("\n------- Describe ------\n", tmp1)
 
-# Get the data types of our columns
+# Print data types of the columns
 tmp1 = data.dtypes
 print("\n-------- Type -------\n", tmp1)
 
 
-# To list all different values of the column StateHoliday
+# To list all different values of the StateHoliday column values
 tmp1 = data.StateHoliday.unique()
 print("\n-------- StateHoliday -------\n", tmp1)
 
@@ -87,21 +87,20 @@ plt.ylabel('Sales')
 
 
 ########## Transformations #######
-## Transforming Data
-### Dropping features
+## Transforming Data by Dropping features
 # Let's think about the goal of our predictions:
 # We want to predict sales numbers for a specific day and store with a set of features that we know beforehand.
 # For example if we'll run a promo or what day of the week it will be.
 # We have a lot of features like these that should help the algorithm predict sales numbers.
 # But we also have three features in our data that don't make sense at this stage and so we'll drop them:
 
-#Store:
+### Store:
 # The store number doesn't in itself predict sales. E.g. a higher store number says nothing about the sales.
 
-# Date:
+#### Date:
 # We could transform the date into something like days since first sale to catch a possible continuous sales growth but we don't do that now.
 
-# Customers:
+#### Customers:
 # This column won't help us at all. As you can see in test.csv we won't have this feature later to make predictions.
 # Which is obvious as you don't know the number of customers on a given day in the future.
 # This would be a feature we could learn and predict just like sales numbers.
@@ -152,7 +151,7 @@ print("The training dataset has {} examples and {} features.".format(X.shape[0],
 #############################################
 ###### Building and cross-validating a model
 #############################################
-# First we import the LinearRegression model and cross_validation from scikit-learn
+# Let us import the LinearRegression model and cross_validation from scikit-learn
 from sklearn.linear_model import LinearRegression
 from sklearn import cross_validation as cv
 
