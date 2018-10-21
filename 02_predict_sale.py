@@ -9,8 +9,8 @@ import IfxPy
 
 ########################################
 # data = pd.read_csv('./train.csv')
-table_name = "test1"
-UserInform = 5000
+table_name = "train1"
+UserInform = 25000
 ConStr = "SERVER=ids0;DATABASE=db1;HOST=127.0.0.1;SERVICE=9088;UID=informix;PWD=xxxxx;"
 
 try:
@@ -110,10 +110,10 @@ plt.plot(store_data.Sales.values[:365])
 # A feature that looks like it could correspond to that weekly period is Promo.
 
 # A great way to get an intuition for correlations is a scatter plot:
-plt.figure(figsize=(20, 10))
-plt.scatter(x=store_data[data.Open==1].Promo, y=store_data[data.Open==1].Sales, alpha=0.1)
-plt.xlabel('Promo')
-plt.ylabel('Sales')
+# plt.figure(figsize=(20, 10))
+# plt.scatter(x=store_data[data.Open==1].Promo, y=store_data[data.Open==1].Sales, alpha=0.1)
+# plt.xlabel('Promo')
+# plt.ylabel('Sales')
 
 
 # Apparently sales are higher when they run a promo on the same day, which makes sense.
@@ -235,3 +235,5 @@ plt.figure(figsize=(20, 10))  # Set figsize to increase size of figure
 plt.plot(store_data.Sales.values[:365], label="ground truth")
 plt.plot(y_store_predict[:365], c='r', label="prediction")
 plt.legend()
+
+print ("Done")
