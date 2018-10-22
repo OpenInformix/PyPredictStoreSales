@@ -38,7 +38,7 @@ while tu != False:
 
 data = pd.DataFrame( ls, columns=[ "Store","DayOfWeek","Date","Sales","Customers","Open","Promo","StateHoliday","SchoolHoliday" ] )
 
-print(f'Rows Selected is {rc} .')
+print('Number of rows selected is {} '.format(rc))
 
 IfxPy.free_result(stmt)
 IfxPy.free_stmt (stmt)
@@ -51,7 +51,7 @@ tmp1 = data.head()
 print("\n------ Head ---------\n", tmp1 )
 
 # Generates descriptive statistics that summarize the central tendency,
-#  dispersion and shape of a dataset’s distribution, excluding NaN values.
+#  dispersion and shape of a dataset's distribution, excluding NaN values.
 tmp1 = data.describe()
 print("\n------- Describe ------\n", tmp1)
 
@@ -191,8 +191,10 @@ print("The training dataset has {} examples and {} features.".format(X.shape[0],
 #############################################
 # Let us import the LinearRegression model and cross_validation from scikit-learn
 from sklearn.linear_model import LinearRegression
-from sklearn import cross_validation as cv
+# from sklearn import cross_validation as cv
 
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import KFold
 
 # Then we initialize the LinearRegression model and KFold with 4 folds.
 # This splits our dataset into 4 parts. To ensure that the examples in these folds are
@@ -207,10 +209,13 @@ from sklearn import cross_validation as cv
 # (because of our KFold with 4 folds) on our data and returns a list of these 4 scores
 
 lr = LinearRegression()
-kfolds = cv.KFold(X.shape[0], n_folds=4, shuffle=True, random_state=42)
-scores = cv.cross_val_score(lr, X, y, cv=kfolds)
+# kfolds = cv.KFold(X.shape[0], n_folds=4, shuffle=True, random_state=42)
+# scores = cv.cross_val_score(lr, X, y, cv=kfolds)
 
-print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std()))
+# kf = KFold(n_splits=4, shuffle=True, random_state=42)
+# kf.get_n_splits(X)
+
+# print("Accuracy: %0.2f (+/- %0.2f)" % (scores.mean(), scores.std()))
 
 
 #########################################
