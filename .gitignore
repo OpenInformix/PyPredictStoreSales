@@ -105,10 +105,25 @@ venv.bak/
 
 
 #####################
+# don't ci if we copy from IfxPy/Examples
+csv_load_sample.py
+csv_util.py
+DbAPI_Sample1.py
+DbAPI_Sample_executemany.py
+DbAPI_Sample_Params.py
+Py_C_SpeedTest.py
+sample.csv
+Sample1.py
+Sample2.py
+
+# Don't ci data
+data
 /data/train.csv
 /data/test.csv
 /data/store.csv
 /data/sample_submission.csv
+
+# don't ci tmp files
 try*.ipynb
 0
 1
